@@ -75,11 +75,11 @@ function accessFunc(e){
       doc = document;
 
       function func(){
-          var body = getElementsByTagName('body'),
+          var body = doc.getElementsByTagName('body'),
               overlay = doc.createElement('div');
               overlay.setAttribute('id', 'overlay');
 
-              body.appendChild(overlay);
+              doc.body.appendChild(overlay);
           
       }
       func();
