@@ -1,0 +1,20 @@
+{
+  "name": "__yourAvonTemplate",
+  "version": "0.0.0",
+  "authors": [
+    "antonio ortiz <17antonio.ortiz@gmail.com>"
+  ],
+  "description": "packages for avon",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "require": "*",
+    "normalize.scss": "kristerkari/normalize.scss"
+  }
+}
