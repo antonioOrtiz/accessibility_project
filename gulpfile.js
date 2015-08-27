@@ -58,7 +58,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
     return gulp.src(paths.JS)
         .pipe(sourcemaps.init())
-  //      .pipe(order(['jquery-1.9.1.min.js','jquery.flipster.js', 'jquery.flipster.ready.function.js','hover.function.js','jquery.fancybox.pack.js','jquery.fancybox-media.js','fancybox.ready.function.js','jquery.hashchange.min.js','jquery.easytabs.js','easytabs.ready.function.js' ]))
+        .pipe(order(['EventUtility.js', 'main.js' ]))
         .pipe(jshint.reporter('fail'))
         .pipe(concat('main.js'))
         .pipe(sourcemaps.write('.'))
