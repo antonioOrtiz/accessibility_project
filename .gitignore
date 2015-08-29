@@ -6,7 +6,11 @@
 *.exe
 *.o
 *.so
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> made modal in js file
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source
@@ -19,13 +23,21 @@
 *.rar
 *.tar
 *.zip
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> made modal in js file
 # Logs and databases #
 ######################
 *.log
 *.sql
 *.sqlite
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> made modal in js file
 # OS generated files #
 ######################
 .DS_Store
@@ -36,7 +48,11 @@
 ehthumbs.db
 Thumbs.db
 
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> made modal in js file
 # sublime text #
 ######################
 spa.sublime-settings
@@ -55,3 +71,8 @@ node_modules
 bower_components
 
 # Git
+<<<<<<< HEAD
+=======
+accessibility.sublime-workspace
+accessibility.sublime-project
+>>>>>>> made modal in js file

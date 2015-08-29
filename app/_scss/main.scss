@@ -1,11 +1,18 @@
 /* reset */
 
+<<<<<<< HEAD
 @import "../bower_components/normalize.scss/normalize";
+=======
+@import "../bower_components/skeleton/css/normalize";
+>>>>>>> made modal in js file
 @import "../bower_components/skeleton/css/skeleton";
 
 
 #overlay {
+<<<<<<< HEAD
   display: none;
+=======
+>>>>>>> made modal in js file
   position: absolute;
   top: 0;
   left: 0;
@@ -13,4 +20,16 @@
   width: 100%;
   height: 100%;
   z-index: 5000;
+<<<<<<< HEAD
 }
+=======
+}
+
+.modal {
+  margin: 50% auto;
+  background: #fff;  
+  height: 200px;
+  border-radius: 5px;
+  z-index: 50000;
+}
+>>>>>>> made modal in js file

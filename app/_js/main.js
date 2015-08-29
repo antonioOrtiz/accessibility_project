@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //   var calculate = function() {
 
 //           var fn = Array.prototype.pop.apply(arguments);
@@ -37,6 +38,37 @@ function accessFunc(e){
           
       }
       func();
+=======
+function accessFunc(e) {
+    console.log('test');
+    var event = EventUtility.getEvent(e),
+        target = EventUtility.getTarget(event),
+        doc = document,
+        createDiv = doc.createElement('div'),
+        containerDiv = doc.createElement('div'),
+        rowDiv = doc.createElement('div'),
+        twelveColumnDiv = doc.createElement('div'),
+        overlayDiv = doc.createElement('div'),
+        modalDiv = doc.createElement('div');
+
+
+    function modalUi() {
+        var body = doc.getElementsByTagName('body');
+            overlayDiv.setAttribute('id', 'overlay');
+
+            doc.body.appendChild(overlayDiv),
+            containerDiv.classList.add('container'),
+            overlayDiv.appendChild(containerDiv),
+            rowDiv.classList.add('row'),
+            containerDiv.appendChild(rowDiv),
+            twelveColumnDiv.classList.add('twelve', 'columns'),
+            rowDiv.appendChild(twelveColumnDiv),
+            modalDiv.classList.add('modal'),
+            twelveColumnDiv.appendChild(modalDiv);
+
+    }
+    modalUi();
+>>>>>>> made modal in js file
 
 }
 
