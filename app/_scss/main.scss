@@ -4,12 +4,16 @@
 @import "../bower_components/skeleton/css/skeleton";
 @import "../bower_components/animate.css-scss/animate";
 @import "../bower_components/sass-mediaqueries/_media-queries";
-// html,
-// body {
-//     height: 100%;
-//     width: 100%;
-//     padding: 0;
-// }
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
 #overlay {
     position: absolute;
@@ -17,6 +21,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    bottom: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 5000;
@@ -71,8 +76,5 @@
 }
 
 .modal-button {
-
-
     margin: 0px auto;
-
 }
