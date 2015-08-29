@@ -1,35 +1,78 @@
 /* reset */
 
-<<<<<<< HEAD
-@import "../bower_components/normalize.scss/normalize";
-=======
 @import "../bower_components/skeleton/css/normalize";
->>>>>>> made modal in js file
 @import "../bower_components/skeleton/css/skeleton";
-
+@import "../bower_components/animate.css-scss/animate";
+@import "../bower_components/sass-mediaqueries/_media-queries";
+// html,
+// body {
+//     height: 100%;
+//     width: 100%;
+//     padding: 0;
+// }
 
 #overlay {
-<<<<<<< HEAD
-  display: none;
-=======
->>>>>>> made modal in js file
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.7);
-  width: 100%;
-  height: 100%;
-  z-index: 5000;
-<<<<<<< HEAD
-}
-=======
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5000;
 }
 
 .modal {
-  margin: 50% auto;
-  background: #fff;  
-  height: 200px;
-  border-radius: 5px;
-  z-index: 50000;
+    position: relative;
+    height: 250px;
+    width: 80%;
+    margin: 40% auto;
+    padding: 0;
+    background: #fff;
+    border-radius: 5px;
+    z-index: 50000;
+    text-align: center;
+    @include bounceIn();
 }
->>>>>>> made modal in js file
+
+@include iphone3(landscape) {
+    .modal {
+        height: 200px;
+        margin: 10% auto;
+    }
+}
+
+@include iphone4(landscape) {
+    .modal {
+        height: 200px;
+        margin: 10% auto;
+    }
+}
+
+@include iphone5(landscape) {
+    .modal {
+        height: 200px;
+        margin: 10% auto;
+    }
+}
+
+@include iphone6(landscape) {
+    .modal {
+        height: 200px;
+        margin: 10% auto;
+    }
+}
+
+@include iphone6-plus(landscape) {
+    .modal {
+        height: 200px;
+        margin: 10% auto;
+    }
+}
+
+.modal-button {
+
+
+    margin: 0px auto;
+
+}

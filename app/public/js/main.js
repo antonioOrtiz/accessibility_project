@@ -44,47 +44,7 @@ var EventUtility = {
         }
     }
 };
-<<<<<<< HEAD
-//   var calculate = function() {
 
-//           var fn = Array.prototype.pop.apply(arguments);
-//           return fn.apply(null, arguments);
-
-//       },
-
-//       sum = function() {
-//           var i = 0, sum = 0;
-//           while(i < arguments.length){
-//            sum += arguments[i];
-//            i++;
-//           }
-//           return sum;
-//       },
-
-//       diff = function(x, y) {
-
-//           return x - y;
-
-//       };
-
-// console.log(calculate(100, 10, 15, sum));
-
-function accessFunc(e){
-  console.log('test');
-  var event = EventUtility.getEvent(e),
-      target = EventUtility.getTarget(event),
-      doc = document;
-
-      function func(){
-          var body = doc.getElementsByTagName('body'),
-              overlay = doc.createElement('div');
-              overlay.setAttribute('id', 'overlay');
-
-              doc.body.appendChild(overlay);
-          
-      }
-      func();
-=======
 function accessFunc(e) {
     console.log('test');
     var event = EventUtility.getEvent(e),
@@ -95,27 +55,32 @@ function accessFunc(e) {
         rowDiv = doc.createElement('div'),
         twelveColumnDiv = doc.createElement('div'),
         overlayDiv = doc.createElement('div'),
-        modalDiv = doc.createElement('div');
+        modalDiv = doc.createElement('div'),
+        buttonText = doc.createTextNode('click-me'),
+        anchorButton = doc.createElement('a'),
+        childOfBodyDiv = doc.createElement('div');
 
 
     function modalUi() {
         var body = doc.getElementsByTagName('body');
+            doc.body.insertBefore(childOfBodyDiv, doc.body.firstChild);
+            childOfBodyDiv.insertBefore(overlayDiv, childOfBodyDiv.firstChild);
             overlayDiv.setAttribute('id', 'overlay');
 
-            doc.body.appendChild(overlayDiv),
             containerDiv.classList.add('container'),
             overlayDiv.appendChild(containerDiv),
             rowDiv.classList.add('row'),
             containerDiv.appendChild(rowDiv),
             twelveColumnDiv.classList.add('twelve', 'columns'),
             rowDiv.appendChild(twelveColumnDiv),
+            twelveColumnDiv.appendChild(modalDiv),
             modalDiv.classList.add('modal'),
-            twelveColumnDiv.appendChild(modalDiv);
+            anchorButton.appendChild(buttonText),
+            anchorButton.classList.add('button', 'button-primary', 'modal-button'),
+            modalDiv.appendChild(anchorButton);
 
     }
     modalUi();
->>>>>>> made modal in js file
-
 }
 
 

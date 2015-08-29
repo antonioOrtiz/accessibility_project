@@ -79,20 +79,11 @@ gulp.task('serve', ['styles', 'scripts'], function() {
         server: "./app"
     });
     gulp.watch('app/_scss/main.scss', ['styles']);
-<<<<<<< HEAD
-    gulp.watch('app/_js/*.js', ['js-watch']);
-=======
+
     gulp.watch('app/_js/*.js', ['js-watch']).on('change', browserSync.reload);
->>>>>>> made modal in js file
+
     gulp.watch(paths.HTML).on('change', browserSync.reload);
 });
 
 
 gulp.task('default', ['serve']);
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> made modal in js file
