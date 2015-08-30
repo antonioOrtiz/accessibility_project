@@ -4,6 +4,7 @@
 @import "../bower_components/skeleton/css/skeleton";
 @import "../bower_components/animate.css-scss/animate";
 @import "../bower_components/sass-mediaqueries/_media-queries";
+
 html {
     position: relative;
     min-height: 100%;
@@ -76,5 +77,5 @@ body {
 }
 
 .modal-button {
-    margin: 0px auto;
+    margin: 20% auto;
 }

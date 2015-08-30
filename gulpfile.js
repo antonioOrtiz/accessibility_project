@@ -56,9 +56,9 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src(paths.JS)
+    return gulp.src([paths.JS,'./node_modules/mustache/mustache.js'])
         .pipe(sourcemaps.init())
-        .pipe(order(['EventUtility.js', 'main.js' ]))
+        .pipe(order(['EventUtility.js', 'mustache.js', 'main.js'  ]))
         .pipe(jshint.reporter('fail'))
         .pipe(concat('main.js'))
         .pipe(sourcemaps.write('.'))
