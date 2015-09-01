@@ -38,30 +38,34 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript" src="/public/js/main.js"></script>
     <script type="text/template" id="templateID">
-        {{#fields}}
         <div class="contentWrapper">
             <div>{{field1}}</div>
             <div>{{field2}}</div>
             <div>{{field3}}</div>
         </div>
-        {{/fields}}
     </script>
     <script>
     var data = {
-        "fields": [{
-                "field1": "some text data",
-                "field2": 100,
-                "field3": "some other string"
-            }
+        "field1": "some text data",
+        "field2": 100,
+        "field3": "some other string"
+    }
 
-        ]
-    };
+
+    // var data = {
+    //     "fields": [{
+    //             "field1": "some text data",
+    //             "field2": 100,
+    //             "field3": "some other string"
+    //         }
+
+    //     ]
+    // };
 
     var tlContent = document.getElementById('templateID').innerHTML,
-        templateContainer = document.getElementById('templateContainer'),
-        result = Mustache.render(tlContent, data);
-
-    templateContainer.innerHTML = result;
+        result = Mustache.render(tlContent, data),
+        templateContainer = document.getElementById('templateContainer');
+        templateContainer.innerHTML = result;
     </script>
 </body>
 
