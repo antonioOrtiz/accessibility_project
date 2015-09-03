@@ -55,10 +55,11 @@ gulp.task('styles', function() {
         }));
 });
 
+
 gulp.task('scripts', function() {
-    return gulp.src([paths.JS,'./node_modules/mustache/mustache.js'])
+    return gulp.src(['./node_modules/jquery/dist/jquery.js','./app/bower_components/jquery-Mustache/jquery.mustache.js','./node_modules/mustache/mustache.js', paths.JS])
         .pipe(sourcemaps.init())
-        .pipe(order(['EventUtility.js', 'mustache.js', 'main.js'  ]))
+        .pipe(order(['jquery.js','jquery.mustache.js','mustache.js','EventUtility.js', 'main.js'  ]))
         .pipe(jshint.reporter('fail'))
         .pipe(concat('main.js'))
         .pipe(sourcemaps.write('.'))

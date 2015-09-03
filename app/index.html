@@ -20,53 +20,15 @@
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <script type="text/javascript" src="/public/js/main.js"></script>
+
 </head>
 
 <body>
     <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="container">
-        <div class="row">
-            <div class="one-half column" style="margin-top: 25%">
-                <div id="templateContainer"></div>
-                <h4>Test!</h4>
-                <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-            </div>
-        </div>
-    </div>
     <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <script type="text/javascript" src="/public/js/main.js"></script>
-    <script type="text/template" id="templateID">
-        <div class="contentWrapper">
-            <div>{{field1}}</div>
-            <div>{{field2}}</div>
-            <div>{{field3}}</div>
-        </div>
-    </script>
-    <script>
-    var data = {
-        "field1": "some text data",
-        "field2": 100,
-        "field3": "some other string"
-    }
-
-
-    // var data = {
-    //     "fields": [{
-    //             "field1": "some text data",
-    //             "field2": 100,
-    //             "field3": "some other string"
-    //         }
-
-    //     ]
-    // };
-
-    var tlContent = document.getElementById('templateID').innerHTML,
-        result = Mustache.render(tlContent, data),
-        templateContainer = document.getElementById('templateContainer');
-        templateContainer.innerHTML = result;
-    </script>
 </body>
 
 </html>

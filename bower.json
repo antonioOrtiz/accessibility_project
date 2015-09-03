@@ -18,6 +18,7 @@
     "normalize.scss": "kristerkari/normalize.scss",
     "sass-mediaqueries": "~1.5.1",
     "skeleton-sass": "~2.5.1",
-    "skeleton": "~2.0.4"
+    "skeleton": "~2.0.4",
+    "jquery-Mustache": "~0.2.7"
   }
 }
