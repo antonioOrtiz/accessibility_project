@@ -12,7 +12,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create();
 
 var paths = {
-    HTML: 'app/*.html',
+    HTML: 'app/**/*.html',
     SCSS: 'app/_scss/main.scss',
     JS: 'app/_js/*.js',
     publicHTML: 'app/public/',

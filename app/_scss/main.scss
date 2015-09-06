@@ -4,18 +4,18 @@
 @import "../bower_components/skeleton/css/skeleton";
 @import "../bower_components/animate.css-scss/animate";
 @import "../bower_components/sass-mediaqueries/_media-queries";
-
-html, body {
-    position:relative;
+html,
+body {
+    position: relative;
     margin: 0;
     padding: 0;
-    width:100%;
+    width: 100%;
     height: 100%;
 }
 
 #overlay {
     position: absolute;
-   // height: 100%;
+    // height: 100%;
     min-height: 100%;
     width: 100%;
     top: 0;
@@ -26,53 +26,68 @@ html, body {
 }
 
 .modal {
-    position: relative;
     height: 250px;
-    width: 80%;
+    width: 85%;
     margin: 40% auto;
-    padding: 0;
+    padding: 0 10px;
     background: #fff;
     border-radius: 5px;
     z-index: 50000;
     text-align: center;
     @include bounceIn();
+    display: table;
+    /* optional, just for the demo */
+    height: 300px;
+    p {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0px 15px 0;
+    }
+    .modal-button {
+        margin: 20px auto;
+    }
 }
 
 @include iphone3(landscape) {
     .modal {
-        height: 200px;
-        margin: 10% auto;
+        margin-top:40px;
+        padding-top:10px;
+        height:200px;
     }
 }
 
 @include iphone4(landscape) {
     .modal {
-        height: 200px;
-        margin: 10% auto;
+        margin-top:40px;
+        padding-top:10px;
+        height:200px;
+
     }
 }
 
 @include iphone5(landscape) {
     .modal {
-        height: 200px;
-        margin: 10% auto;
+        margin-top:40px;
+        padding-top:10px;
+        height:200px;
+
     }
 }
 
 @include iphone6(landscape) {
     .modal {
-        height: 200px;
-        margin: 10% auto;
+        margin-top:40px;
+        padding-top:10px;
+        height:200px;
+
     }
 }
 
 @include iphone6-plus(landscape) {
     .modal {
-        height: 200px;
-        margin: 10% auto;
-    }
-}
+        margin-top:40px;
+        padding-top:10px;
+        height:200px;
 
-.modal-button {
-    margin: 20% auto;
+    }
 }

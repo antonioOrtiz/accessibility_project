@@ -2545,7 +2545,8 @@ there.
             transform: translateX(100%) rotate(120deg);
   }
 }
-html, body {
+html,
+body {
   position: relative;
   margin: 0;
   padding: 0;
@@ -2565,11 +2566,10 @@ html, body {
 }
 
 .modal {
-  position: relative;
   height: 250px;
-  width: 80%;
+  width: 85%;
   margin: 40% auto;
-  padding: 0;
+  padding: 0 10px;
   background: #fff;
   border-radius: 5px;
   z-index: 50000;
@@ -2588,40 +2588,53 @@ html, body {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+  display: table;
+  /* optional, just for the demo */
+  height: 300px;
+}
+.modal p {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0px 15px 0;
+}
+.modal .modal-button {
+  margin: 20px auto;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
   .modal {
+    margin-top: 40px;
+    padding-top: 10px;
     height: 200px;
-    margin: 10% auto;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: landscape) {
   .modal {
+    margin-top: 40px;
+    padding-top: 10px;
     height: 200px;
-    margin: 10% auto;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: landscape) {
   .modal {
+    margin-top: 40px;
+    padding-top: 10px;
     height: 200px;
-    margin: 10% auto;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
   .modal {
+    margin-top: 40px;
+    padding-top: 10px;
     height: 200px;
-    margin: 10% auto;
   }
 }
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
   .modal {
+    margin-top: 40px;
+    padding-top: 10px;
     height: 200px;
-    margin: 10% auto;
   }
-}
-.modal-button {
-  margin: 20% auto;
 }
 
 
