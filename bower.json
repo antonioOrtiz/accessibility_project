@@ -1,10 +1,10 @@
 {
-  "name": "__yourAvonTemplate",
-  "version": "0.0.0",
+  "name": "Accessibility app",
+  "version": "0.0.1",
   "authors": [
     "antonio ortiz <17antonio.ortiz@gmail.com>"
   ],
-  "description": "packages for avon",
+  "description": "A web app to confirm accessibility of your website/web-app",
   "license": "MIT",
   "ignore": [
     "**/.*",
