@@ -6,42 +6,43 @@ $(document).ready(function() {
             out = [],
             getStartedBtn = doc.getElementById('getStartedBtn'),
             output = doc.createElement('p');
-            output.setAttribute('id', 'output');
-            getStartedBtn.parentNode.insertBefore(output, getStartedBtn.nextSibling);
 
-        EventUtility.addHandler(getStartedBtn, 'click', function() {
+        output.setAttribute('id', 'output');
 
+
+        EventUtility.addHandler(getStartedBtn, 'click', function(e) {
             var all = doc.getElementsByTagName("IMG");
+
+
+            //EventUtility.preventDefault(event);
+
 
             for (var i = 0, max = all.length; i < max; i++) {
                 var id = all[i].id;
                 if (all[i].hasAttribute('alt')) {
-                    out.push(id + ' has alt');
+                    out.push('Your image element, with the id of <strong>' + id + '</strong>, has an <strong> alt </strong> tag.');
                     var value = all[i].getAttribute('alt');
                     if (value != "") {
                         out.push(id + ' alt="' + value + '"');
                     } else {
-                        out.push(id + ' alt is empty');
+                        out.push('But <strong>' + id + '\'s alt </strong> is empty');
                     }
                 } else {
                     out.push(id + ' does not have alt');
                 }
             }
-            doc.getElementById('output').innerHTML = out.join("\n");
+            var modalEl = $('#modal').clone().removeClass();
+            $('#modal').remove();
+            $('.modal-container').append(modalEl);
+            $('#modal').addClass('modal-animation');
+
+            $('#modal > p').remove();
+
+            $('#modal').append(output);
+            output.innerHTML = out.join("\n");
 
 
-            // for (var i = 0; i < all.length; i++) {
-            //     if (all[i].hasAttribute('alt')) {
-            //         if (all[i].alt === '') {
-            //             console.log('this has a ' + all[i].nodeName + ' tag BUT it is empty!');
-            //         } else {
-            //             console.log('Yes, this has a ' + all[i].nodeName + ' tag and it is NOT empty!');
-            //         }
-            //     } else {
-            //         console.log('Sorry ' + all[i].nodeName + ' tag, doesn\'t have an alt tag!');
-            //     }
 
-            // }
         });
     }
 
@@ -61,9 +62,6 @@ $(document).ready(function() {
 
 
     }
-
-
-
 
     modalUi();
 });

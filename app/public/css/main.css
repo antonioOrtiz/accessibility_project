@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* reset */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -2545,6 +2544,121 @@ there.
             transform: translateX(100%) rotate(120deg);
   }
 }
+#modal {
+  height: 250px;
+  width: 70%;
+  max-width: 500px;
+  margin: 40% auto;
+  padding: 0 10px;
+  background: #fff;
+  border-radius: 5px;
+  z-index: 50000;
+  text-align: center;
+  display: table;
+  /* optional, just for the demo */
+  height: 200px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
+  #modal {
+    margin-top: 100px;
+    padding-top: 10px;
+    width: 90%;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: portrait) {
+  #modal {
+    margin-top: 100px;
+    padding-top: 10px;
+    width: 90%;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: portrait) {
+  #modal {
+    margin-top: 100px;
+    padding-top: 10px;
+    width: 90%;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  #modal {
+    margin-top: 100px;
+    padding-top: 10px;
+    width: 90%;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  #modal {
+    margin-top: 100px;
+    padding-top: 10px;
+    width: 90%;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
+  #modal {
+    margin-top: 40px;
+    padding-top: 20px;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: landscape) {
+  #modal {
+    margin-top: 40px;
+    padding-top: 20px;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: landscape) {
+  #modal {
+    margin-top: 40px;
+    padding-top: 20px;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+  #modal {
+    margin-top: 40px;
+    padding-top: 20px;
+    height: 200px;
+  }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  #modal {
+    margin-top: 40px;
+    padding-top: 20px;
+    height: 200px;
+  }
+}
+#modal p {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 20px 15px 0;
+}
+#modal .modal-button {
+  margin: 20px auto 5px;
+}
+
+.modal-animation {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 html,
 body {
   position: relative;
@@ -2563,78 +2677,6 @@ body {
   padding: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 5000;
-}
-
-.modal {
-  height: 250px;
-  width: 85%;
-  margin: 40% auto;
-  padding: 0 10px;
-  background: #fff;
-  border-radius: 5px;
-  z-index: 50000;
-  text-align: center;
-  -webkit-animation-name: bounceIn;
-  animation-name: bounceIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  display: table;
-  /* optional, just for the demo */
-  height: 300px;
-}
-.modal p {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0px 15px 0;
-}
-.modal .modal-button {
-  margin: 20px auto;
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
-  .modal {
-    margin-top: 40px;
-    padding-top: 10px;
-    height: 200px;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: landscape) {
-  .modal {
-    margin-top: 40px;
-    padding-top: 10px;
-    height: 200px;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: landscape) {
-  .modal {
-    margin-top: 40px;
-    padding-top: 10px;
-    height: 200px;
-  }
-}
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
-  .modal {
-    margin-top: 40px;
-    padding-top: 10px;
-    height: 200px;
-  }
-}
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
-  .modal {
-    margin-top: 40px;
-    padding-top: 10px;
-    height: 200px;
-  }
 }
 
 

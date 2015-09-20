@@ -10052,50 +10052,113 @@ return jQuery;
 
 var EventUtility = {
 
-    addHandler: function(element, type, handler) {
-        if (element.addEventListener) {
+    addHandler: function(element, type, handler){
+        if (element.addEventListener){
             element.addEventListener(type, handler, false);
-        } else if (element.attachEvent) {
-            element.attachEvent('on' + type, handler);
+        } else if (element.attachEvent){
+            element.attachEvent("on" + type, handler);
         } else {
-            element['on' + type] = handler;
+            element["on" + type] = handler;
         }
     },
 
-    getEvent: function(event) {
+    getButton: function(event){
+        if (document.implementation.hasFeature("MouseEvents", "2.0")){
+            return event.button;
+        } else {
+            switch(event.button){
+                case 0:
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    return 0;
+                case 2:
+                case 6:
+                    return 2;
+                case 4: return 1;
+            }
+        }
+    },
+
+    getCharCode: function(event){
+        if (typeof event.charCode == "number"){
+            return event.charCode;
+        } else {
+            return event.keyCode;
+        }
+    },
+
+    getClipboardText: function(event){
+        var clipboardData =  (event.clipboardData || window.clipboardData);
+        return clipboardData.getData("text");
+    },
+
+    getEvent: function(event){
         return event ? event : window.event;
     },
 
-    getTarget: function(event) {
+    getRelatedTarget: function(event){
+        if (event.relatedTarget){
+            return event.relatedTarget;
+        } else if (event.toElement){
+            return event.toElement;
+        } else if (event.fromElement){
+            return event.fromElement;
+        } else {
+            return null;
+        }
+
+    },
+
+    getTarget: function(event){
         return event.target || event.srcElement;
     },
 
-    preventDefault: function(event) {
-        if (event.preventDefault) {
+    getWheelDelta: function(event){
+        if (event.wheelDelta){
+            return (client.engine.opera && client.engine.opera < 9.5 ? -event.wheelDelta : event.wheelDelta);
+        } else {
+            return -event.detail * 40;
+        }
+    },
+
+    preventDefault: function(event){
+        if (event.preventDefault){
             event.preventDefault();
         } else {
             event.returnValue = false;
         }
     },
 
-    removeHandler: function(element, type, handler) {
-        if (element.removeEventListener) {
+    removeHandler: function(element, type, handler){
+        if (element.removeEventListener){
             element.removeEventListener(type, handler, false);
-        } else if (element.detachEvent) {
-            element.detachEvent('on' + type, handler);
+        } else if (element.detachEvent){
+            element.detachEvent("on" + type, handler);
         } else {
-            element['on' + type] = null;
+            element["on" + type] = null;
         }
     },
 
-    stopPropagation: function(event) {
-        if (event.stopPropagation) {
+    setClipboardText: function(event, value){
+        if (event.clipboardData){
+            event.clipboardData.setData("text/plain", value);
+        } else if (window.clipboardData){
+            window.clipboardData.setData("text", value);
+        }
+    },
+
+    stopPropagation: function(event){
+        if (event.stopPropagation){
             event.stopPropagation();
         } else {
             event.cancelBubble = true;
         }
     }
+
 };
+
 $(document).ready(function() {
 
 
@@ -10104,42 +10167,43 @@ $(document).ready(function() {
             out = [],
             getStartedBtn = doc.getElementById('getStartedBtn'),
             output = doc.createElement('p');
-            output.setAttribute('id', 'output');
-            getStartedBtn.parentNode.insertBefore(output, getStartedBtn.nextSibling);
 
-        EventUtility.addHandler(getStartedBtn, 'click', function() {
+        output.setAttribute('id', 'output');
 
+
+        EventUtility.addHandler(getStartedBtn, 'click', function(e) {
             var all = doc.getElementsByTagName("IMG");
+
+
+            //EventUtility.preventDefault(event);
+
 
             for (var i = 0, max = all.length; i < max; i++) {
                 var id = all[i].id;
                 if (all[i].hasAttribute('alt')) {
-                    out.push(id + ' has alt');
+                    out.push('Your image element, with the id of <strong>' + id + '</strong>, has an <strong> alt </strong> tag.');
                     var value = all[i].getAttribute('alt');
                     if (value != "") {
                         out.push(id + ' alt="' + value + '"');
                     } else {
-                        out.push(id + ' alt is empty');
+                        out.push('But <strong>' + id + '\'s alt </strong> is empty');
                     }
                 } else {
                     out.push(id + ' does not have alt');
                 }
             }
-            doc.getElementById('output').innerHTML = out.join("\n");
+            var modalEl = $('#modal').clone().removeClass();
+            $('#modal').remove();
+            $('.modal-container').append(modalEl);
+            $('#modal').addClass('modal-animation');
+
+            $('#modal > p').remove();
+
+            $('#modal').append(output);
+            output.innerHTML = out.join("\n");
 
 
-            // for (var i = 0; i < all.length; i++) {
-            //     if (all[i].hasAttribute('alt')) {
-            //         if (all[i].alt === '') {
-            //             console.log('this has a ' + all[i].nodeName + ' tag BUT it is empty!');
-            //         } else {
-            //             console.log('Yes, this has a ' + all[i].nodeName + ' tag and it is NOT empty!');
-            //         }
-            //     } else {
-            //         console.log('Sorry ' + all[i].nodeName + ' tag, doesn\'t have an alt tag!');
-            //     }
 
-            // }
         });
     }
 
@@ -10159,9 +10223,6 @@ $(document).ready(function() {
 
 
     }
-
-
-
 
     modalUi();
 });
