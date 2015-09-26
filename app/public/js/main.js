@@ -10161,11 +10161,18 @@ var EventUtility = {
 
 $(document).ready(function() {
 
+    function nextChecker() {
+        EventUtility.addHandler(getStartedBtn, 'click', function(e) {
+          console.log('next Checker, button!')
+        });
+
+    }
 
     function altChecker() {
         var doc = document,
             out = [],
             getStartedBtn = doc.getElementById('getStartedBtn'),
+            //re = /click-me/gi,
             output = doc.createElement('p');
 
         output.setAttribute('id', 'output');
@@ -10181,12 +10188,12 @@ $(document).ready(function() {
             for (var i = 0, max = all.length; i < max; i++) {
                 var id = all[i].id;
                 if (all[i].hasAttribute('alt')) {
-                    out.push('Your image element, with the id of <strong>' + id + '</strong>, has an <strong> alt </strong> tag.');
+                    out.push('\nYour image element, with the id of <strong>' + id + '</strong>, has an <strong> alt </strong> tag.<br>');
                     var value = all[i].getAttribute('alt');
                     if (value != "") {
                         out.push(id + ' alt="' + value + '"');
                     } else {
-                        out.push('But <strong>' + id + '\'s alt </strong> is empty');
+                        out.push('But <strong>' + id + '\'s alt </strong> is empty.<br>');
                     }
                 } else {
                     out.push(id + ' does not have alt');
@@ -10200,11 +10207,16 @@ $(document).ready(function() {
             $('#modal > p').remove();
 
             $('#modal').append(output);
+
+
             output.innerHTML = out.join("\n");
 
+            getStartedBtn.innerHTML = 'continue';
+            $('#modal > p').append(getStartedBtn);
 
-
+            nextChecker();
         });
+
     }
 
     function modalUi() {
@@ -10220,7 +10232,6 @@ $(document).ready(function() {
         $('body').prepend(overlay);
 
         EventUtility.addHandler(window, 'load', altChecker);
-
 
     }
 
