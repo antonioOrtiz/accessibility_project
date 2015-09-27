@@ -2549,7 +2549,7 @@ there.
   width: 70%;
   max-width: 500px;
   margin: 40% auto;
-  padding: 0 10px;
+  padding: 15px 10px;
   background: #fff;
   border-radius: 5px;
   z-index: 50000;
@@ -2640,6 +2640,56 @@ there.
 }
 #modal .modal-button {
   margin: 20px auto 5px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: portrait) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: portrait) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) and (orientation: landscape) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) and (orientation: landscape) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  #modal .modal-button {
+    margin-bottom: 10px;
+  }
 }
 
 .modal-animation {

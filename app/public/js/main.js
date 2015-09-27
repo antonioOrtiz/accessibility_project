@@ -10161,9 +10161,19 @@ var EventUtility = {
 
 $(document).ready(function() {
 
-    function nextChecker() {
-        EventUtility.addHandler(getStartedBtn, 'click', function(e) {
-          console.log('next Checker, button!')
+    function nextChecker(newBtnName) {
+        var doc = document,
+
+             appButtonNextChecker = doc.getElementById('appButtonNextChecker');
+
+            EventUtility.addHandler(appButtonNextChecker, 'click', function(e) {
+
+                $noRemove = $('#output').find('#appButtonNextChecker');
+                var text = 'flim-flam </br> ' + $('<div/>').html( $noRemove ).html();
+
+                $('#output').html(text);
+
+            console.log('next Checker, button!');
         });
 
     }
@@ -10171,19 +10181,13 @@ $(document).ready(function() {
     function altChecker() {
         var doc = document,
             out = [],
-            getStartedBtn = doc.getElementById('getStartedBtn'),
-            //re = /click-me/gi,
+            appButton = doc.getElementById('appButton'),
             output = doc.createElement('p');
 
         output.setAttribute('id', 'output');
 
-
-        EventUtility.addHandler(getStartedBtn, 'click', function(e) {
+        EventUtility.addHandler(appButton, 'click', function(e) {
             var all = doc.getElementsByTagName("IMG");
-
-
-            //EventUtility.preventDefault(event);
-
 
             for (var i = 0, max = all.length; i < max; i++) {
                 var id = all[i].id;
@@ -10208,13 +10212,15 @@ $(document).ready(function() {
 
             $('#modal').append(output);
 
-
             output.innerHTML = out.join("\n");
 
-            getStartedBtn.innerHTML = 'continue';
-            $('#modal > p').append(getStartedBtn);
+            appButton.innerHTML = 'continue';
+            $('#modal > p').append(appButton);
+            appButton.id = 'appButtonNextChecker';
+            $(appButton).unbind();
 
-            nextChecker();
+            nextChecker(appButtonNextChecker);
+
         });
 
     }
